@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  font-family: "Agency FB", arial, sans-serif;
+  background-color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fullscreen-video {
+  position: fixed;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  translate: -50% -50%;
+  z-index: -1;
+}
+
+#loading {
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: #fff;
+  font-size: 2rem;
+}
+
+#loading-frame {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 1rem 2rem;
+}
+
+/* Legends List */
+#legends {
+  opacity: 0;
+  transform: translateY(-200px);
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  height: 100px;
+  width: 100%;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#legends li {
+  border: 2px solid rgba(191, 186, 190, 0.6);
+  display: inline-flex;
+  flex-direction: column;
+  width: 90px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  transform: skewX(-25deg);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+#legends li:hover {
+  border: 2px solid rgb(0, 133, 199);
+}
+
+#legends li:hover .legend__nickname {
+  background-color: rgb(0, 133, 199);
+  color: #fff;
+}
+
+#legends li img {
+  transform: skewX(25deg);
+}
+
+#legends .legend__nickname {
+  background-color: #e0e2e1;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  left: -5px;
+  padding: 2px;
+  z-index: 1;
+  transform: skewX(25deg);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  #legends {
+    flex: 1 1 0;
+    position: relative;
+    overflow-x: auto;
+    flex-wrap: wrap;
+    height: auto;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+  max-width: 1780px;
+  padding: 0 1rem;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Single Legend */
+#legend {
+  opacity: 0;
+  transform: translateY(-200px);
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  flex: 1 1 0;
+  position: relative;
+}
+#legend img {
+  max-height: 100%;
+}
+
+@media (min-width: 768px) {
+  #legend {
+    align-items: center;
+    max-height: 100%;
+  }
+}
+
+.legend-data {
+  opacity: 0;
+  transform: translateY(-200px);
+
+  border: 2px solid rgba(191, 186, 190, 0.6);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  left: 0;
+  bottom: 90px;
+  padding: 10px;
+  max-height: 300px;
+  overflow: auto;
+  font-size: 1.2rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(40, 40, 40);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ef4718;
+}
