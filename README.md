@@ -4,6 +4,8 @@
 
 V1: https://raddythebrand.github.io/apex-legends/data.json
 
+API Details: https://raddythebrand.github.io/apex-legends/
+
 ## Original Idea
 
 The original idea was to create a an API using Node.Js where you can use different parameters to select only the data that you need. Unfortunately, since Heroku is closing down the free tier I am unable to find a free or a cheap hosting plan that can take a lot of requiests.
